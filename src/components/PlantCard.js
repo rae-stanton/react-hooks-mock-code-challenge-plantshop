@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 
 //sold out function similar to a favorite?
-function PlantCard({id, name, image, price}) {
+function PlantCard({id, name, image, price, onDelete}) {
   const [inStock, setInStock] = useState(true);
   return (
     <li className="card">
@@ -14,6 +14,7 @@ function PlantCard({id, name, image, price}) {
       ) : (
         <button onClick={() => setInStock(!inStock)}> Out of Stock</button>
       )}
+      <button className="secondary delete-button" onClick={onDelete}>Remove</button>
     </li>
   );
 }

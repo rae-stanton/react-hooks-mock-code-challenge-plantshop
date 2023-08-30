@@ -41,12 +41,6 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
-    },
-    {
-      "name": "Shiny Plant",
-      "image": "http://localhost:3000/images/aloe.jpg",
-      "price": 10,
-      "id": 8
     }
   ]
 }

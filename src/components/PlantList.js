@@ -10,6 +10,16 @@ function PlantList({ searchQuery }) {
       .then(setPlants);
   }, []);
 
+  function deletePlant(id) {
+    fetch(`http://localhost:6001/plants/${id}`, {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        setPlants((currentPlants) => currentPlants.filter((plant => plant.id !== id)))
+      }
+    })
+  }
+
   const filteredPlants = plants.filter((plant) =>
     plant.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -23,6 +33,7 @@ function PlantList({ searchQuery }) {
           name={plant.name}
           image={plant.image}
           price={plant.price}
+          onDelete={() => deletePlant(plant.id)}
         />
       ))}
     </ul>
