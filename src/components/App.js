@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import PlantPage from "./PlantPage";
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState("");
   return (
     <div className="app">
-      <Header />
-      <PlantPage />
+      <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <PlantPage searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
     </div>
   );
 }
